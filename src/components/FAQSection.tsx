@@ -31,7 +31,7 @@ export default function FAQSection() {
   };
 
   const whatsappUrl =
-    "https://api.whatsapp.com/send/?phone=917572094201&text=Hi+Digitacurve%2C+I%27m+inquiring+about+your+Melbourne+Google+Ads+services.&type=phone_number&app_absent=0";
+    "https://api.whatsapp.com/send/?phone=917572094201&text=Hi+Digitacurve%2C+I%27m+inquiring+about+your+Melbourne+Web+Design+services.&type=phone_number&app_absent=0";
 
   return (
     <section id="faq-section" className="relative py-24 bg-slate-900 border-t border-white/5 overflow-hidden">

@@ -7,7 +7,7 @@ import confetti from 'canvas-confetti';
 
 export default function HeroSection() {
   const whatsappUrl =
-    "https://api.whatsapp.com/send/?phone=917572094201&text=Hi+Digitacurve%2C+I%27m+inquiring+about+your+Melbourne+Google+Ads+services.&type=phone_number&app_absent=0";
+    "https://api.whatsapp.com/send/?phone=917572094201&text=Hi+Digitacurve%2C+I%27m+inquiring+about+your+Melbourne+Web+Design+services.&type=phone_number&app_absent=0";
 
   const [formState, setFormState] = useState<'idle' | 'loading' | 'success'>('idle');
   const [formData, setFormData] = useState({
@@ -57,8 +57,51 @@ export default function HeroSection() {
 
     setFormState('loading');
 
+    const messageText = `Hi Digitacurve,
+
+I have just submitted a strategy request on your website. Here are my details:
+
+*Name:* ${formData.name}
+*Business Name:* ${formData.businessName}
+*Email:* ${formData.email}
+*Phone:* ${formData.phone}
+*Website:* ${formData.website || 'N/A'}
+*Service Needed:* ${formData.service}
+*Project Budget:* ${formData.budget}
+
+*Message:*
+${formData.message}`;
+
+    const encodedMessage = encodeURIComponent(messageText);
+    const dynamicWhatsappUrl = `https://api.whatsapp.com/send/?phone=917572094201&text=${encodedMessage}&type=phone_number&app_absent=0`;
+
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+      
+      if (!accessKey || accessKey === 'your_web3forms_access_key_here') {
+        console.warn('Web3Forms Access Key is not configured or is using placeholder. Skipping Web3Forms API submission, but proceeding with WhatsApp redirect.');
+        await new Promise((resolve) => setTimeout(resolve, 800));
+      } else {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            subject: `New Strategy Request from ${formData.name} (${formData.businessName})`,
+            from_name: 'Digitacurve Landing Page',
+            ...formData,
+          }),
+        });
+
+        const result = await response.json();
+        if (!result.success) {
+          console.error('Web3Forms submission failed:', result);
+        }
+      }
+      
       setFormState('success');
       
       confetti({
@@ -69,12 +112,22 @@ export default function HeroSection() {
       });
 
       setTimeout(() => {
-        window.location.href = whatsappUrl;
+        window.location.href = dynamicWhatsappUrl;
       }, 2500);
 
     } catch (err) {
-      setFormState('idle');
-      console.error(err);
+      setFormState('success');
+      console.error('Web3Forms API submission error:', err);
+      
+      confetti({
+        particleCount: 100,
+        spread: 60,
+        origin: { y: 0.6 },
+      });
+
+      setTimeout(() => {
+        window.location.href = dynamicWhatsappUrl;
+      }, 2500);
     }
   };
 
