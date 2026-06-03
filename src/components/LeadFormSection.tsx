@@ -30,9 +30,9 @@ export default function LeadFormSection() {
       newErrors.email = 'Please enter a valid email';
     }
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone Number is required';
+      newErrors.phone = 'WhatsApp Number is required';
     } else if (formData.phone.length < 8) {
-      newErrors.phone = 'Please enter a valid phone number';
+      newErrors.phone = 'Please enter a valid WhatsApp number';
     }
     if (!formData.message.trim()) newErrors.message = 'Message details are required';
     
@@ -61,7 +61,7 @@ I have just submitted a strategy request on your website. Here are my details:
 *Name:* ${formData.name}
 *Business Name:* ${formData.businessName}
 *Email:* ${formData.email}
-*Phone:* ${formData.phone}
+*WhatsApp Number:* ${formData.phone}
 *Website:* ${formData.website || 'N/A'}
 *Service Needed:* ${formData.service}
 *Project Budget:* ${formData.budget}
@@ -239,7 +239,7 @@ ${formData.message}`;
 
                 <div className="flex flex-col">
                   <label htmlFor="form-phone" className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
-                    Phone Number <span className="text-orange-500 font-black">*</span>
+                    WhatsApp Number <span className="text-orange-500 font-black">*</span>
                   </label>
                   <input
                     type="tel"

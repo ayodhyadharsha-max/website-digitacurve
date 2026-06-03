@@ -33,9 +33,9 @@ export default function HeroSection() {
       newErrors.email = 'Invalid email';
     }
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone is required';
+      newErrors.phone = 'WhatsApp number is required';
     } else if (formData.phone.length < 8) {
-      newErrors.phone = 'Invalid phone';
+      newErrors.phone = 'Invalid WhatsApp number';
     }
     if (!formData.message.trim()) newErrors.message = 'Message is required';
     
@@ -64,7 +64,7 @@ I have just submitted a strategy request on your website. Here are my details:
 *Name:* ${formData.name}
 *Business Name:* ${formData.businessName}
 *Email:* ${formData.email}
-*Phone:* ${formData.phone}
+*WhatsApp Number:* ${formData.phone}
 *Website:* ${formData.website || 'N/A'}
 *Service Needed:* ${formData.service}
 *Project Budget:* ${formData.budget}
@@ -399,7 +399,7 @@ ${formData.message}`;
                           htmlFor="hero-phone-input"
                           className="absolute text-[9px] font-bold text-slate-500 duration-300 transform -translate-y-2.5 scale-90 top-3.5 z-10 origin-[0] left-3 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-2.5 peer-focus:text-orange-500 uppercase tracking-wider"
                         >
-                          Phone Number <span className="text-orange-500">*</span>
+                          WhatsApp Number <span className="text-orange-500">*</span>
                         </label>
                         {errors.phone && <span className="text-[9px] text-rose-500 mt-0.5 block font-semibold">{errors.phone}</span>}
                       </div>
