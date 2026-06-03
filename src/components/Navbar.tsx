@@ -16,14 +16,27 @@ export default function Navbar() {
       }
     };
     window.addEventListener('scroll', handleScroll);
+
+    // Smooth scroll to initial hash if present on mount
+    if (window.location.hash) {
+      const hash = window.location.hash;
+      setTimeout(() => {
+        const element = document.getElementById(hash.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 500);
+    }
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Services', href: '#services-section' },
+    { name: 'Services', href: '#shopify-stores' },
     { name: 'Why Choose Us', href: '#why-choose-us' },
     { name: 'Our Process', href: '#website-process' },
     { name: 'FAQs', href: '#faq-section' },
+    { name: 'Contact', href: '#lead-form-section' },
   ];
 
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
@@ -32,6 +45,7 @@ export default function Navbar() {
     const element = document.getElementById(targetId.substring(1));
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.history.pushState(null, '', targetId);
     }
   };
 
@@ -81,8 +95,8 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="#hero-lead-form"
-              onClick={(e) => handleScrollTo(e, '#hero-lead-form')}
+              href="#hero-audit-form"
+              onClick={(e) => handleScrollTo(e, '#hero-audit-form')}
               className="relative inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md shadow-orange-500/10 group overflow-hidden active:scale-95 border border-orange-500/20"
             >
               <span className="relative z-10 flex items-center gap-1.5">
@@ -122,8 +136,8 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#hero-lead-form"
-            onClick={(e) => handleScrollTo(e, '#hero-lead-form')}
+            href="#hero-audit-form"
+            onClick={(e) => handleScrollTo(e, '#hero-audit-form')}
             className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-extrabold text-slate-950 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition-all duration-300 text-center shadow-lg shadow-orange-500/20 active:scale-[0.98] mt-2"
           >
             <span>Free Web Strategy</span>

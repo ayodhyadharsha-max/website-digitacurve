@@ -57,6 +57,7 @@ export default function ServicesSection() {
     const element = document.getElementById('lead-form-section');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.history.pushState(null, '', '#lead-form-section');
     }
   };
 
@@ -85,14 +86,16 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
+            const cardId = index === 0 ? "custom-web-design" : index === 1 ? "shopify-stores" : "landing-pages";
             return (
               <motion.div
                 key={service.title}
+                id={cardId}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="group flex flex-col justify-between rounded-2xl glass-panel p-6 sm:p-8 border border-white/5 transition-all duration-300 hover:border-orange-500/30 hover:shadow-lg hover:shadow-orange-500/[0.02] hover:-translate-y-1 relative overflow-hidden"
+                className="group flex flex-col justify-between rounded-2xl glass-panel p-6 sm:p-8 border border-white/5 transition-all duration-300 hover:border-orange-500/30 hover:shadow-lg hover:shadow-orange-500/[0.02] hover:-translate-y-1 relative overflow-hidden scroll-mt-28"
               >
                 <div>
                   {/* Icon + Title block */}

@@ -261,6 +261,7 @@ ${formData.message}`;
                 onClick={(e) => {
                   e.preventDefault();
                   document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
+                  window.history.pushState(null, '', '#services-section');
                 }}
                 className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-sm sm:text-base font-bold text-slate-300 bg-slate-900 border border-white/10 hover:bg-slate-800 transition-all active:scale-95 gap-1.5"
               >
