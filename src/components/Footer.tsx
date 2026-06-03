@@ -154,13 +154,26 @@ export default function Footer() {
               <p className="text-xs text-slate-400 leading-relaxed mb-4">
                 Serving local businesses in Melbourne, Victoria, and across Australia.
               </p>
-              <div className="p-4 rounded-xl bg-slate-900 border border-white/5 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-500 flex-shrink-0 font-bold">
-                  ★
+              <div className="p-4 rounded-xl bg-slate-900 border border-white/5 flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-500 flex-shrink-0 font-bold">
+                    ★
+                  </div>
+                  <div>
+                    <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Customer Rating</div>
+                    <div className="text-xs font-bold text-white">4.9/5 Star Rating</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Customer Rating</div>
-                  <div className="text-xs font-bold text-white">4.9/5 Star Rating</div>
+                <div className="border-t border-white/5 pt-3">
+                  <a 
+                    href="https://share.google/lqQYvQkKRH9Mjc77u" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs text-orange-500 hover:text-orange-400 transition-colors font-bold group"
+                  >
+                    <span>Read Google Reviews</span>
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                  </a>
                 </div>
               </div>
             </div>

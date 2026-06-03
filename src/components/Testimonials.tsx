@@ -99,6 +99,25 @@ export default function Testimonials() {
           ))}
         </div>
 
+        {/* Google Reviews CTA */}
+        <motion.div 
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-16 flex justify-center"
+        >
+          <a
+            href="https://share.google/lqQYvQkKRH9Mjc77u"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-slate-950/80 border border-white/10 hover:border-orange-500/30 transition-all duration-300 shadow-lg hover:shadow-orange-500/5 group active:scale-95"
+          >
+            <Star className="w-4 h-4 text-orange-500 fill-orange-500 group-hover:rotate-12 group-hover:scale-110 transition-transform" />
+            <span>View Our Google Reviews</span>
+          </a>
+        </motion.div>
+
       </div>
     </section>
   );
