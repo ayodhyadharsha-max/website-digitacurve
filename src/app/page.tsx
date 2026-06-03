@@ -7,6 +7,7 @@ import MobileFirstSection from '@/components/MobileFirstSection';
 import SeoReadySection from '@/components/SeoReadySection';
 import Testimonials from '@/components/Testimonials';
 import IndustriesServed from '@/components/IndustriesServed';
+import LeadFormSection from '@/components/LeadFormSection';
 import FAQSection from '@/components/FAQSection';
 import Widgets from '@/components/Widgets';
 import Footer from '@/components/Footer';
@@ -135,6 +136,7 @@ export default function WebDesignMelbournePage() {
         <SeoReadySection />
         <Testimonials />
         <IndustriesServed />
+        <LeadFormSection />
         <FAQSection />
       </main>
       <Footer />
