@@ -75,9 +75,9 @@ export default function RootLayout({
   return (
     <html
       lang="en-AU"
-      className={`${outfit.variable} ${inter.variable} h-full antialiased dark`}
+      className={`${outfit.variable} ${inter.variable} h-full antialiased dark overflow-x-hidden w-full`}
     >
-      <body className="min-h-full flex flex-col bg-slate-950 text-slate-100 selection:bg-orange-500 selection:text-white">
+      <body className="min-h-full flex flex-col bg-slate-950 text-slate-100 selection:bg-orange-500 selection:text-white overflow-x-hidden w-full">
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe 

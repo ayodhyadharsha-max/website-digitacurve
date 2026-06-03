@@ -126,7 +126,7 @@ export default function WebDesignMelbournePage() {
 
       {/* Main Page Layout */}
       <Navbar />
-      <main className="flex-1 flex flex-col">
+      <main className="flex-1 flex flex-col overflow-x-hidden w-full relative">
         <HeroSection />
         <ServicesSection />
         <WhyChooseUs />

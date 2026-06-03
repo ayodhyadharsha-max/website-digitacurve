@@ -38,7 +38,7 @@ export default function IndustriesServed() {
   ];
 
   return (
-    <section className="relative py-24 bg-slate-950 bg-grid-pattern border-t border-white/5">
+    <section className="relative py-24 bg-slate-950 bg-grid-pattern border-t border-white/5 overflow-hidden">
       {/* Light blobs */}
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-80 h-80 rounded-full bg-blue-500/5 blur-[120px] pointer-events-none animate-pulse-slow"></div>
       <div className="absolute bottom-1/4 left-1/4 translate-x-1/2 translate-y-1/2 w-80 h-80 rounded-full bg-orange-500/5 blur-[120px] pointer-events-none animate-pulse-slow"></div>

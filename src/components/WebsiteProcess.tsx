@@ -38,7 +38,7 @@ export default function WebsiteProcess() {
   ];
 
   return (
-    <section id="website-process" className="relative py-24 bg-slate-950 bg-grid-pattern border-t border-white/5">
+    <section id="website-process" className="relative py-24 bg-slate-950 bg-grid-pattern border-t border-white/5 overflow-hidden">
       {/* Glow blobs */}
       <div className="absolute top-1/3 right-1/4 -translate-y-1/2 w-80 h-80 rounded-full bg-orange-500/5 blur-[120px] pointer-events-none animate-pulse-slow"></div>
       <div className="absolute bottom-1/3 left-1/4 translate-y-1/2 w-80 h-80 rounded-full bg-blue-500/5 blur-[120px] pointer-events-none animate-pulse-slow"></div>
