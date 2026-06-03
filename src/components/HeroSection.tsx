@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, BadgeCheck, Zap, Smartphone, Sparkles, Send, Lock, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, BadgeCheck, Zap, Smartphone, Sparkles, Send, Lock, CheckCircle2, Star } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function HeroSection() {
@@ -151,6 +151,32 @@ ${formData.message}`;
             >
               <BadgeCheck className="w-4 h-4 text-orange-500" />
               <span>Melbourne-Based Custom Web Specialists</span>
+            </motion.div>
+
+            {/* Google Reviews Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.05 }}
+              className="mb-6"
+            >
+              <a
+                href="https://share.google/lqQYvQkKRH9Mjc77u"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900 border border-white/5 hover:border-orange-500/20 hover:bg-slate-900/60 transition-all duration-300 active:scale-95 group"
+              >
+                <div className="flex items-center gap-0.5 text-orange-500">
+                  <Star className="w-3 h-3 fill-orange-500" />
+                  <Star className="w-3 h-3 fill-orange-500" />
+                  <Star className="w-3 h-3 fill-orange-500" />
+                  <Star className="w-3 h-3 fill-orange-500" />
+                  <Star className="w-3 h-3 fill-orange-500" />
+                </div>
+                <span className="text-slate-300 text-[11px] font-semibold group-hover:text-white transition-colors">
+                  4.9/5 Rating on Google Reviews
+                </span>
+              </a>
             </motion.div>
 
             <motion.h1
