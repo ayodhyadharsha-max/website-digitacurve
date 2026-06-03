@@ -272,6 +272,7 @@ ${formData.message}`;
 
           {/* Hero Right Lead Generation Form Card (Desktop: Right, Mobile: Stacks Below) */}
           <div id="hero-lead-form" className="lg:col-span-5 relative w-full flex justify-center lg:sticky lg:top-24">
+            <span id="hero-audit-form" className="absolute -top-32"></span>
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
