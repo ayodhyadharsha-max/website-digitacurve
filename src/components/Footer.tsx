@@ -4,7 +4,7 @@ import { ArrowRight, MessageSquare, Mail, MapPin, Phone } from 'lucide-react';
 
 export default function Footer() {
   const whatsappUrl =
-    "https://api.whatsapp.com/send/?phone=917572094201&text=Hi+Digitacurve%2C+I%27m+inquiring+about+your+Melbourne+Google+Ads+services.&type=phone_number&app_absent=0";
+    "https://api.whatsapp.com/send/?phone=917572094201&text=Hi+Digitacurve%2C+I%27m+inquiring+about+your+Melbourne+Web+Design+services.&type=phone_number&app_absent=0";
 
   const socialLinks = [
     { 
