@@ -257,16 +257,16 @@ ${formData.message}`;
               </a>
 
               <a
-                href="#services-section"
+                href="#hero-audit-form"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
-                  window.history.pushState(null, '', '#services-section');
+                  document.getElementById('hero-lead-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  window.history.pushState(null, '', '#hero-audit-form');
                 }}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-sm sm:text-base font-bold text-slate-300 bg-slate-900 border border-white/10 hover:bg-slate-800 transition-all active:scale-95 gap-1.5"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-sm sm:text-base font-extrabold text-slate-100 bg-slate-900 border border-white/10 hover:bg-slate-800 transition-all active:scale-95 gap-1.5 cursor-pointer"
               >
-                <span>Learn Our Services</span>
-                <ArrowRight className="w-4 h-4 text-slate-400" />
+                <span>Get Started</span>
+                <ArrowRight className="w-4 h-4 text-orange-500" />
               </a>
             </motion.div>
           </div>
@@ -407,24 +407,6 @@ ${formData.message}`;
                       </div>
                     </div>
 
-                    {/* Row 3: Website URL */}
-                    <div className="relative w-full">
-                      <input
-                        type="text"
-                        id="hero-website-input"
-                        name="website"
-                        value={formData.website}
-                        onChange={handleChange}
-                        placeholder=" "
-                        className="peer w-full px-3 py-2.5 pt-4.5 rounded-xl bg-slate-950/80 border border-white/10 text-white outline-none focus:border-orange-500/50 hover:border-white/20 transition-all font-sans text-xs"
-                      />
-                      <label
-                        htmlFor="hero-website-input"
-                        className="absolute text-[9px] font-bold text-slate-500 duration-300 transform -translate-y-2.5 scale-90 top-3.5 z-10 origin-[0] left-3 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-90 peer-focus:-translate-y-2.5 peer-focus:text-orange-500 uppercase tracking-wider"
-                      >
-                        Website URL <span className="text-slate-500 font-medium">(Optional)</span>
-                      </label>
-                    </div>
 
                     {/* Row 4: Dropdowns */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">

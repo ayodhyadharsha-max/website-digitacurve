@@ -256,21 +256,6 @@ ${formData.message}`;
                 </div>
               </div>
 
-              {/* Row 3: Website URL */}
-              <div className="flex flex-col">
-                <label htmlFor="form-website" className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
-                  Current Website URL <span className="text-slate-500 font-medium">(Optional)</span>
-                </label>
-                <input
-                  type="text"
-                  id="form-website"
-                  name="website"
-                  value={formData.website}
-                  onChange={handleChange}
-                  placeholder="e.g. www.mybusiness.com.au"
-                  className="w-full px-4 py-3.5 rounded-xl bg-slate-950/80 border border-white/10 text-white placeholder-slate-500 outline-none focus:border-orange-500/50 hover:border-white/20 transition-all font-sans text-sm"
-                />
-              </div>
 
               {/* Row 4: Service & Budget dropdowns */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
